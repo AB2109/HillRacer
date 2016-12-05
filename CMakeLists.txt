@@ -51,6 +51,8 @@ include_directories(
 	${CMAKE_SOURCE_DIR}/external/glm-0.9.7.0/
 	${CMAKE_SOURCE_DIR}/external/glew-1.9.0/include/
 	${CMAKE_SOURCE_DIR}/external/rs232/
+  ${CMAKE_SOURCE_DIR}/external/Box2D/
+  ${CMAKE_SOURCE_DIR}/external/
 	${CMAKE_SOURCE_DIR}/rt2d/
 	${CMAKE_SOURCE_DIR}/.
 )
@@ -58,7 +60,8 @@ include_directories(
 link_directories(
 	${CMAKE_SOURCE_DIR}/external/glfw-3.0.3/src/
 	${CMAKE_SOURCE_DIR}/external/glew-1.9.0/
-	${CMAKE_SOURCE_DIR}/external/rs232
+	${CMAKE_SOURCE_DIR}/external/rs232/
+  ${CMAKE_SOURCE_DIR}/external/Box2D/
 	${CMAKE_SOURCE_DIR}/external/
 	${CMAKE_SOURCE_DIR}/rt2d
 )
@@ -69,6 +72,7 @@ set(ALL_LIBS
 	rt2d
 	GLFW_303
 	GLEW_190
+  Box2D
 )
 
 add_definitions(
@@ -130,75 +134,29 @@ file(
 	DESTINATION ${CMAKE_BINARY_DIR}
 )
 
+
+
 ####################################################################
-# demo                                                             #
+# HelloWorld  (Box2D)                                              #
 ####################################################################
-add_executable(demo
-	demo/main.cpp
-	demo/basicentity.cpp
-	demo/basicentity.h
-	demo/boidentity.cpp
-	demo/boidentity.h
-	demo/scene00.cpp
-	demo/scene00.h
-	demo/scene01.cpp
-	demo/scene01.h
-	demo/scene02.cpp
-	demo/scene02.h
-	demo/scene02a.cpp
-	demo/scene02a.h
-	demo/scene03.cpp
-	demo/scene03.h
-	demo/scene03a.cpp
-	demo/scene03a.h
-	demo/scene03b.cpp
-	demo/scene03b.h
-	demo/scene04.cpp
-	demo/scene04.h
-	demo/scene05.cpp
-	demo/scene05.h
-	demo/scene06.cpp
-	demo/scene06.h
-	demo/scene07.cpp
-	demo/scene07.h
-	demo/scene08.cpp
-	demo/scene08.h
-	demo/scene09.cpp
-	demo/scene09.h
-	demo/scene10.cpp
-	demo/scene10.h
-	demo/superscene.cpp
-	demo/superscene.h
+
+add_executable(HelloWorld
+  HelloWorld/HelloWorld.cpp
+	HelloWorld/myentity.cpp
+	HelloWorld/myentity.h
+	HelloWorld/myscene.cpp
+	HelloWorld/myscene.h
 )
-target_link_libraries(demo
+target_link_libraries(HelloWorld
+  Box2D
 	${ALL_LIBS}
 )
-# Copy assets to the build directory
 file(
-	COPY demo/assets
+	COPY ${CMAKE_SOURCE_DIR}/HelloWorld/assets
 	DESTINATION ${CMAKE_BINARY_DIR}
 )
 
 ####################################################################
-# start                                                            #
-####################################################################
-add_executable(start
-	start/main.cpp
-	start/myentity.cpp
-	start/myentity.h
-	start/myscene.cpp
-	start/myscene.h
-)
-target_link_libraries(start
-	${ALL_LIBS}
-)
-# Copy assets to the build directory
-file(
-	COPY start/assets
-	DESTINATION ${CMAKE_BINARY_DIR}
-)
-####################################################################
-
 
 if(WIN32)
 	# Xcode and Visual working directories for demo
@@ -225,3 +183,5 @@ if (NOT ${CMAKE_GENERATOR} MATCHES "Xcode" )
 elseif (${CMAKE_GENERATOR} MATCHES "Xcode" )
 
 endif (NOT ${CMAKE_GENERATOR} MATCHES "Xcode" )
+
+################################################################## ### BOX2D #####################################################################
