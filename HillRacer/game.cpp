@@ -9,9 +9,9 @@
 
 
 #include <box2D.h>
-#include "myscene.h"
+#include "game.h"
 
-MyScene::MyScene() : Scene()
+Game::Game() : Scene()
 {
 	// start the timer.
 	t.start();
@@ -29,7 +29,7 @@ MyScene::MyScene() : Scene()
 }
 
 
-MyScene::~MyScene()
+Game::~Game()
 {
 	// deconstruct and delete the Tree
 	this->removeChild(car);
@@ -38,7 +38,7 @@ MyScene::~MyScene()
 	delete car;
 }
 
-void MyScene::update(float deltaTime)
+void Game::update(float deltaTime)
 {
 	// ###############################################################
 	// Escape key stops the Scene

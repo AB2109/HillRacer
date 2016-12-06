@@ -6,20 +6,21 @@
  * @brief description of MyScene behavior.
  */
 
-#ifndef MYSCENE_H
-#define MYSCENE_H
+#ifndef GAME_H
+#define GAME_H
 
 #include <rt2d/scene.h>
 #include "car.h"
 
 /// @brief The MyScene class is the Scene implementation.
-class MyScene : public Scene
+class Game : public Scene
 {
 public:
 	/// @brief Constructor
-	MyScene();
+	Game();
 	/// @brief Destructor
-	virtual ~MyScene();
+	virtual ~Game();
+
 
 	/// @brief update is automatically called every frame
 	/// @param deltaTime the elapsed time in seconds

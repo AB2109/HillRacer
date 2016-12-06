@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 #include <rt2d/core.h>
-#include "myscene.h"
+#include "game.h"
 
 // This is a simple example of building and running a simulation
 // using Box2D. Here we create a large ground box and a small dynamic
@@ -98,13 +98,13 @@ int main(int argc, char** argv)
 	Core core;
 
 	// Scene01
-	MyScene* myscene = new MyScene(); // create Scene on the heap
-	while(myscene->isRunning()) { // check status of Scene every frame
-		core.run(myscene); // update and render the current scene
+	Game* game = new Game(); // create Scene on the heap
+	while(game->isRunning()) { // check status of Scene every frame
+		core.run(game); // update and render the current scene
 		core.showFrameRate(5); // show framerate in output every n seconds
 	}
 	core.cleanup(); // cleanup ResourceManager (Textures + Meshes, but not Shaders)
-	delete myscene; // delete Scene and everything in it from the heap to make space for next Scene
+	delete game; // delete Scene and everything in it from the heap to make space for next Scene
 
 	// No need to explicitly clean up the core.
 	// As a local var, core will go out of scope and destroy Renderer->ResourceManager.

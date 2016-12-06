@@ -142,8 +142,8 @@ file(
 
 add_executable(HillRacer
   HillRacer/HillRacer.cpp
-	HillRacer/myscene.cpp
-	HillRacer/myscene.h
+	HillRacer/game.cpp
+	HillRacer/game.h
   HillRacer/car.cpp
   HillRacer/car.h
 )
