@@ -142,11 +142,12 @@ file(
 
 add_executable(HillRacer
   HillRacer/HillRacer.cpp
-	HillRacer/myentity.cpp
-	HillRacer/myentity.h
 	HillRacer/myscene.cpp
 	HillRacer/myscene.h
+  HillRacer/car.cpp
+  HillRacer/car.h
 )
+
 target_link_libraries(HillRacer
   Box2D
 	${ALL_LIBS}

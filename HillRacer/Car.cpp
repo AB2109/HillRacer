@@ -1,29 +1,24 @@
 /**
  * This class describes MyEntity behavior.
  *
- * Copyright 2015 Your Name <you@yourhost.com>
+ * Copyright 2016 Amin Benali <Amin@benali.nl>
  */
 
-#include "myentity.h"
+#include "car.h"
 
-Car::MyEntity() : Entity()
+Car::Car() : Entity()
 {
 	this->addSprite("assets/car.tga");
-	this->sprite()->color = GREEN;
+	this->sprite()->color = WHITE;
 }
 
-MyEntity::~MyEntity()
+Car::~Car()
 {
 
 }
 
-void MyEntity::update(float deltaTime)
+void Car::update(float deltaTime)
 {
-	// ###############################################################
-	// Rotate
-	// ###############################################################
-	this->rotation += HALF_PI * deltaTime; // 90 deg/sec
-	if (this->rotation > TWO_PI) {
-		this->rotation -= TWO_PI;
-	}
+
+
 }
