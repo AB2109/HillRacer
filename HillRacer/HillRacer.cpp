@@ -115,7 +115,7 @@ int main(int argc, char** argv)
 		core.run(myscene); // update and render the current scene
 		core.showFrameRate(5); // show framerate in output every n seconds
 	}
-	//core.cleanup(); // cleanup ResourceManager (Textures + Meshes, but not Shaders)
+	core.cleanup(); // cleanup ResourceManager (Textures + Meshes, but not Shaders)
 	delete myscene; // delete Scene and everything in it from the heap to make space for next Scene
 
 	// No need to explicitly clean up the core.

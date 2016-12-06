@@ -137,22 +137,22 @@ file(
 
 
 ####################################################################
-# HelloWorld  (Box2D)                                              #
+# HillRacer  (Box2D)                                              #
 ####################################################################
 
-add_executable(HelloWorld
-  HelloWorld/HelloWorld.cpp
-	HelloWorld/myentity.cpp
-	HelloWorld/myentity.h
-	HelloWorld/myscene.cpp
-	HelloWorld/myscene.h
+add_executable(HillRacer
+  HillRacer/HillRacer.cpp
+	HillRacer/myentity.cpp
+	HillRacer/myentity.h
+	HillRacer/myscene.cpp
+	HillRacer/myscene.h
 )
-target_link_libraries(HelloWorld
+target_link_libraries(HillRacer
   Box2D
 	${ALL_LIBS}
 )
 file(
-	COPY ${CMAKE_SOURCE_DIR}/HelloWorld/assets
+	COPY ${CMAKE_SOURCE_DIR}/HillRacer/assets
 	DESTINATION ${CMAKE_BINARY_DIR}
 )
 
