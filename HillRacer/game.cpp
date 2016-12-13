@@ -58,6 +58,43 @@ void Game::update(float deltaTime)
 	}
 
 	// ###############################################################
+	// Arrow moves car
+	// ###############################################################
+	if (input()->getKeyDown( GLFW_KEY_D )) {
+		car->position.x += 10.5f;
+	}
+
+	if (input()->getKeyUp( GLFW_KEY_D )) {
+		car->position.x += 0.0f;
+	}
+
+	if (input()->getKeyDown( GLFW_KEY_A )) {
+		car->position.x -= 10.5f;
+	}
+	if (input()->getKeyUp( GLFW_KEY_A )) {
+		car->position.x -= 0.0f;
+	}
+
+	if (input()->getKeyDown( GLFW_KEY_W )) {
+		car->position.y -= 10.5f;
+	}
+
+	if (input()->getKeyUp( GLFW_KEY_W )) {
+		car->position.y -= 0.0f;
+	}
+
+	if (input()->getKeyDown( GLFW_KEY_S )) {
+		car->position.y += 10.5f;
+	}
+	if (input()->getKeyUp( GLFW_KEY_S )) {
+		car->position.y += 0.0f;
+	}
+
+
+
+
+
+	// ###############################################################
 	// Rotate color
 	// ###############################################################
 	if (t.seconds() > 0.0333f) {

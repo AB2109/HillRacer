@@ -8,7 +8,6 @@
 
 #include <Box2D/Box2D.h>
 #include <stdio.h>
-
 #include <rt2d/core.h>
 #include "game.h"
 
