@@ -11,6 +11,7 @@
 
 #include <rt2d/scene.h>
 #include "car.h"
+#include "ground.h"
 
 /// @brief The MyScene class is the Scene implementation.
 class Game : public Scene
@@ -27,12 +28,24 @@ public:
 	/// @return void
 	virtual void update(float deltaTime);
 
+	b2World* world;
+	b2Body* myBodyDef;
+
+
+
 private:
 	/// @brief the rotating square in the middle of the screen
 		/// @brief a Timer to rotate the color every n seconds
 	Timer t;
 	/// @brief a Car to drive
 	Car* car;
+	b2Body* dynamicBody;
+	b2Body* groundBody;
+	Ground* ground;
+	//Line* line;
+
+
+
 };
 
 #endif /* SCENE00_H */

@@ -146,6 +146,8 @@ add_executable(HillRacer
 	HillRacer/game.h
   HillRacer/car.cpp
   HillRacer/car.h
+  HillRacer/ground.h
+  HillRacer/ground.cpp
 )
 
 target_link_libraries(HillRacer
